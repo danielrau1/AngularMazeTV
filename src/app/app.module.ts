@@ -16,12 +16,14 @@ import { AppComponent } from './app.component';
 import { ShowsComponent } from './shows/shows.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EpisodesComponent } from './episodes/episodes.component';
+import { SeasonEpisodesComponent } from './season-episodes/season-episodes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowsComponent,
-    EpisodesComponent
+    EpisodesComponent,
+    SeasonEpisodesComponent
   ],
   imports: [
     BrowserModule,

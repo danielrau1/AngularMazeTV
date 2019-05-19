@@ -27,4 +27,9 @@ export class ServiceService {
     return this.http.get<Episode[]>('https://api.tvmaze.com/shows/' + u + '/episodes');
   }
 
+  // [2.2d]
+  getSeasonEpisodes(u): Observable<Episode[]> {
+    return this.http.get<Episode[]>('https://api.tvmaze.com/seasons/' + u + '/episodes');
+  }
+
 }
