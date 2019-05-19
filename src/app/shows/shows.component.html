@@ -1,0 +1,36 @@
+
+
+
+<!--[1.1b]-->
+<mat-form-field >
+  <input matInput type="text" placeholder="Enter key words" [(ngModel)]="keyWords">
+</mat-form-field>
+<button mat-button (click)="searchShows()">Search shows</button>
+
+
+
+
+<!--[1.2a]-->
+<mat-accordion *ngIf="shows">
+  <mat-expansion-panel *ngFor="let show of shows">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h5 [innerHTML]="show.show.name"></h5>
+      </mat-panel-title>
+      <mat-panel-description>
+        <h5 [innerHTML]="'Premiered: ' + show.show.premiered"></h5>
+      </mat-panel-description>
+      <mat-panel-description>
+        <h5 [innerHTML]="'Status: ' + show.show.status"></h5>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <!--The inner part contains more info and the Get Seasons button which invokes the goToSesasons function button to fetch the -->
+    <ng-template matExpansionPanelContent>
+      <img  [src]="show.show.image.medium">
+      <span [innerHTML]="show.show.summary"></span>
+      <h5 [innerHTML]="'<u>Show language:</u> ' + show.show.language"></h5>
+      <button mat-flat-button color="primary" (click)="goToSeasons(show)" >Get Seasons</button>
+    </ng-template>
+  </mat-expansion-panel>
+</mat-accordion>
