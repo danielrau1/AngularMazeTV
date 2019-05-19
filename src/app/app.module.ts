@@ -15,11 +15,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowsComponent } from './shows/shows.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EpisodesComponent } from './episodes/episodes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowsComponent
+    ShowsComponent,
+    EpisodesComponent
   ],
   imports: [
     BrowserModule,

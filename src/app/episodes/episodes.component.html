@@ -1,0 +1,28 @@
+<p>
+  show id is {{showId}}
+</p>
+
+
+
+<!--[2.1e]-->
+<h3><u>Double Loop Method</u></h3>
+<div *ngIf="seasons" >
+  <br>
+  <mat-list *ngFor="let season of seasons" (click)="showEpisodes(season)">
+    <!-- Loop through the seasons and for each season inclue a click showEpisodes function-->
+    <h3 mat-subheader style="background-color: lightgray; border: black 1px solid;width:50%" >Season {{season.number}}</h3>
+
+    <!-- Output episodes for a given season-->
+    <div *ngIf = "clicked2 && season.number==seasonClicked">
+       <span *ngFor="let episode of episodes">
+         <span *ngIf = "episode.season==season.number">
+           <mat-list-item style="background-color: lightcyan; border: black 1px solid;width:50%">
+             {{episode.name}}
+           </mat-list-item>
+         </span>
+       </span>
+
+    </div>
+
+  </mat-list>
+</div>
